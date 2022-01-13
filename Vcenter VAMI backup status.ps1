@@ -25,3 +25,7 @@ Write-Host "Status of latest VAMI backup for '$Server'"
 Write-Host "                        "
 
 $backupjob.get($result[0]) | select-object id, start_time, end_time, progress, state  
+
+
+
+Write-Host "  ****Thank You******  "
