@@ -1,4 +1,4 @@
-﻿Write-Host "Welcome to script to get utilization report for multiple VM in CSV format"
+Write-Host "Welcome to script to get utilization report for multiple VM in CSV format"
 Write-Host "                        "
 
 $Server = Read-Host -Prompt 'Input Vcenter IP or FQDN'
@@ -6,18 +6,18 @@ Write-Host "Please wait while we try to connect.... "
 Connect-VIServer -server $Server
 
 $c="true"
-$start = Read-Host -Prompt 'Enter start date (Format: MM/DD/YYY AM/PM) '
-$Finish = Read-Host -Prompt 'Enter start date (Format: MM/DD/YYY AM/PM) '
+[DateTime]$start = Read-Host -Prompt 'Enter start date (Format: MM/DD/YYYY) '
+[DateTime]$Finish = Read-Host -Prompt 'Enter end date (Format: MM/DD/YYYY) '
 
 if($c)
 {
-  if($start -gt $FInish)
+  if($start -gt $Finish)
    {
     Write-Host "                        "
     Write-Host "Error : Start date is greater than end date, please re-enter the dates"
     Write-Host "                        "
-    $start = Read-Host -Prompt 'Enter start date (Format: MM/DD/YYY AM/PM) '
-    $Finish = Read-Host -Prompt 'Enter start date (Format: MM/DD/YYY AM/PM) '
+    [DateTime]$start = Read-Host -Prompt 'Enter start date (Format: MM/DD/YYYY) '
+    [DateTime]$Finish = Read-Host -Prompt 'Enter end date (Format: MM/DD/YYYY) '
    }
    else
    {
