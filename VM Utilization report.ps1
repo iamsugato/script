@@ -6,8 +6,8 @@ Write-Host "Please wait while we try to connect.... "
 Connect-VIServer -server $Server
 
 $c="true"
-[DateTime]$start = Read-Host -Prompt 'Enter start date (Format: MM/DD/YYYY) '
-[DateTime]$Finish = Read-Host -Prompt 'Enter end date (Format: MM/DD/YYYY) '
+[DateTime]$start = Read-Host -Prompt 'Enter start date (Format: MM/DD/YYYY or MM/DD/YYYY hh:mm ) '
+[DateTime]$Finish = Read-Host -Prompt 'Enter end date (Format: MM/DD/YYYY or MM/DD/YYYY hh:mm) '
 
 if($c)
 {
@@ -16,8 +16,8 @@ if($c)
     Write-Host "                        "
     Write-Host "Error : Start date is greater than end date, please re-enter the dates"
     Write-Host "                        "
-    [DateTime]$start = Read-Host -Prompt 'Enter start date (Format: MM/DD/YYYY) '
-    [DateTime]$Finish = Read-Host -Prompt 'Enter end date (Format: MM/DD/YYYY) '
+    [DateTime]$start = Read-Host -Prompt 'Enter start date (Format: MM/DD/YYYY or MM/DD/YYYY hh:mm) '
+    [DateTime]$Finish = Read-Host -Prompt 'Enter end date (Format: MM/DD/YYYY or MM/DD/YYYY hh:mm) '
    }
    else
    {
